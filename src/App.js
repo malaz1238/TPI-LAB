@@ -5,8 +5,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import "./App.css";
 
-import NotFound from './components/routes/NotFound'
+import NotFound from './components/routes/NotFound';
 import Shop from "./components/Shop/Shop";
+import Product from "./components/Product/Product";
 
 const App = () => {
 
@@ -18,6 +19,10 @@ const App = () => {
     {
       path: "/Shop",
       element: (<Shop />),
+    },
+    {
+      path: "/Product",
+      element: (<Product />),
     },
     {
       path: "*",

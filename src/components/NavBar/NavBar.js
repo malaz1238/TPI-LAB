@@ -1,14 +1,22 @@
 import React from "react";
+import { FaShoppingCart } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigation = useNavigate();
+
+  const goLogin = () => {
+    navigation("/Login");
+  };
+
   return (
     <>
       <nav className="navbar bg-primary">
         <div className="p-2 flex-grow-1">Empresa</div>
-        <a class="navbar-brand" href="#">
-          <img src="https://cdn-icons-png.flaticon.com/512/4202/4202388.png" alt="" width="30" height="24" />Carrito
-        </a>
-        <button type="button" class="btn btn-outline-light me-2">Iniciar sesión</button>
+        <div classname="cart-icon">
+          <h2><FaShoppingCart /> <p>Carrito</p></h2>
+        </div>
+        <button onClick={goLogin} type="button" class="btn btn-outline-light me-2">Iniciar sesión</button>
       </nav>
     </>
   );
